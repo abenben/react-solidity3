@@ -6,7 +6,7 @@ function StepFive(props) {
 
     const setHandler = (event) => {
         event.preventDefault();
-        props.contract.store(event.target.setNum.value)
+        props.contract.giveRightToVote(event.target.setNum.value)
         .then(
             result => {
                 setCheck("Run Step 4. again to check ");
@@ -30,10 +30,10 @@ function StepFive(props) {
     {
         return (
             <div>
-                <h3>Step 5. call store() to update value</h3>
+                <h3>Step 5. call giveRightToVote() to address of voter</h3>
                 <form onSubmit={setHandler}>
-                    <input id="setNum" type="number"/>
-                    <button type={"submit"}> Update value </button>
+                    <input id="setNum" type="text"/>
+                    <button type={"submit"}> address of voter </button>
                 </form>
                 <p>{check}</p>
                 {errorMessage}

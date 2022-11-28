@@ -6,8 +6,8 @@ function StepFour(props) {
     const getCurrentVal = async () => {
         console.log("STEP 4.");
         console.log("contract.FUNCTION() to call function");
-		let val = await props.contract.retrieve();
-		setVal(val.toNumber());
+		let val = await props.contract.winnerName();
+		setVal(val);
         props.allowStepFive(true);
 	}
 
@@ -15,8 +15,8 @@ function StepFour(props) {
     {
         return (
             <div>
-                <h3>Step 4. Call retrieve() from the contract</h3>
-                <p>Retrieved value: {val}</p>
+                <h3>Step 4. Call winnerName() from the contract</h3>
+                <p>winnerName address: {val}</p>
                 <button onClick={getCurrentVal}> Get Value</button>
             </div>
         );
